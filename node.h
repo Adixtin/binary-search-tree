@@ -6,6 +6,6 @@ class Node{
 		Node* right;
 		Node* left;
 	Node(int value);
-	int comparing(Node node);
+	void comparing(Node node);
 };
 

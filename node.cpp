@@ -11,14 +11,20 @@ Node::Node(int value){
 	left = nullptr;
 }
 
-int Node::comparing(Node node){
+void Node::comparing(Node node){
 	if(this->data > node.data){
-		return 1;
+		if(this->left != nullptr){
+			this->left->comparing(node);
+		}
+		else{this->left = &node;}
+
 	}
 	else if(this->data < node.data){
-		return 2;
+		if(this->right != nullptr){
+			this->right->comparing(node);
+		}
+		else{this->right = &node;}
 	}
-	else{
-		return 0;
-	}
+
+
 }
