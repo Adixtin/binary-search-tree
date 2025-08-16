@@ -3,30 +3,28 @@
 #include "tree.h"
 #include "node.h"
 
-std::vector<int> tree;
-int root;
 
 Tree::Tree(std::vector<int> array){
 	tree = array;
 
 }
 
-std::vector<Node> Tree::ToNodeConverter(std::vector<int> tree){
-	std::vector<Node> nodeVector;
-	for (int i = 0; i < tree.size(); i++){
-		Node node(tree[i]);
-		nodeVector.push_back(node);
+std::vector<Node*> Tree::createNodeVector(std::vector<int> tree){
+	std::vector<Node*> nodeVector;
+	for (int value : tree){
+		nodeVector.push_back(new Node(value));
 	}
+
 	return nodeVector;
 }
 
- Node Tree::BuildTree(std::vector<Node> tree){
-	for (int i = 0; i < tree.size() - 1; i++){
-		Node node1 = tree[i];
-		Node node2 = tree[i+1];
 
-		node1.comparing(node2);	
+Node* Tree::buildTree(std::vector<Node*> nodeVector){
+	Node* root = nodeVector[0];
+
+	for(size_t i = 1;i < nodeVector.size(); i++){
+		root->insertNode(nodeVector[i]);
 	}
 
-	return tree[0];
+	return nodeVector[0];
 }
