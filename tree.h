@@ -9,6 +9,7 @@ class Tree{
 		int root;
 	Tree(std::vector<int> array);
 
-	std::vector<Node*> createNodeVector(std::vector<int> tree);
-	Node* buildTree(std::vector<Node*> tree);
+//	std::vector<Node*> createNodeVector(std::vector<int> tree);
+	Node* buildTree();
+	Node* findNode(int value, Node* node);
 };

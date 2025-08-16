@@ -6,17 +6,20 @@ Node::Node(int value){
 	left = nullptr;
 }
 
-void Node::insertNode(Node* node){
+void Node::insertNode(int value){
+
+	Node* node = new Node(value);
+
 	if(this->data > node->data){
 		if(this->left != nullptr){
-			this->left->insertNode(node);
+			this->left->insertNode(value);
 		}
 		else{this->left = node;}
 
 	}
 	else if(this->data < node->data){
 		if(this->right != nullptr){
-			this->right->insertNode(node);
+			this->right->insertNode(value);
 		}
 		else{this->right = node;}
 	}

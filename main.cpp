@@ -14,12 +14,14 @@ int main(){
 
 	Tree tree(intVector);
 	
-	std::vector<Node*> nodeVector = tree.createNodeVector(intVector);
 
-	Node* root = (tree.buildTree(nodeVector));
+	Node* root = (tree.buildTree());
+
+	Node* locatedNode = (tree.findNode(12, root));
 
 	std::cout << root->left->right->data << "\n";
 	std::cout << root->data << "\n";
+	std::cout << locatedNode->data << "\n";
 
 	return 0;
 };

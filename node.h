@@ -6,6 +6,6 @@ class Node{
 		Node* right;
 		Node* left;
 	Node(int value);
-	void insertNode(Node* node);
+	void insertNode(int value);
 };
 
