@@ -14,7 +14,7 @@ void Node::insertNode(int value){
 		if(this->left != nullptr){
 			this->left->insertNode(value);
 		}
-		else{this->left = node;}
+		else this->left = node;
 
 	}
 	else if(this->data < node->data){
@@ -26,3 +26,4 @@ void Node::insertNode(int value){
 
 
 }
+

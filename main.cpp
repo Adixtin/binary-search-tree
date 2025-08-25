@@ -10,19 +10,20 @@ int main(){
 	Node node2(10);
 
 
-	std::vector<int> intVector = {7,19,4,12,6};
+	std::vector<int> intVector = {7,19,4,12,6,10,17,120,15,1,43};
 
 	Tree tree(intVector);
 	
 
 	Node* root = (tree.buildTree());
 
-	Node* locatedNode = (tree.findNode(12, root));
+	int valueToDelete;
 
-	std::cout << root->left->right->data << "\n";
-	std::cout << root->data << "\n";
-	std::cout << locatedNode->data << "\n";
+	std::cin >> valueToDelete;
 
+	root = tree.deleteNode(valueToDelete, root);
+
+	tree.printTree(root);
 	return 0;
 };
 

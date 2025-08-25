@@ -12,4 +12,7 @@ class Tree{
 //	std::vector<Node*> createNodeVector(std::vector<int> tree);
 	Node* buildTree();
 	Node* findNode(int value, Node* node);
+	Node* deleteNode(int value, Node* root);
+	Node* maxValueNode(Node* node);
+	void printTree(Node* root, int space = 0, int indent = 5);
 };
